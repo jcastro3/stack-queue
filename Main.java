@@ -11,15 +11,15 @@ public class Main {
 		 * 
 		 * push(int value) should insert an element in the top of stack and returns the new length 
 		 * push(int[] values) should insert array's elements into the stack and returns the new length	
-		 * pop() should remove the top element and return it
-		 * pop(int elements) should remove number of elements given
+		 * == pop() should remove the top element and return it
+		 * == pop(int elements) should remove number of elements given
 		 * 
 		 * Queue:
 		 * 
 		 * enqueue(int value) should insert an element in the top of stack and returns the new length
 		 * enqueue(int[] values) should insert array's elements into the stack and returns the new length
-		 * dequeue() should remove the top element and return it
-		 * dequeue(int elements) should remove number of elements given
+		 * == dequeue() should remove the top element and return it
+		 * == dequeue(int elements) should remove number of elements given
 		 * 
 		 * common methods:
 		 * 
@@ -28,6 +28,10 @@ public class Main {
 		 * join(string separator) should return a string with all values separated by the provided separator, if not separator is defined then it should return separated by commas
 		 * unique() returns all unique values, this means, the values which are not duplicated
 		 * 
+		 
+		 Next task:
+		 - create a common object to contain common methods
+		 
 		 * Unit tests of each method plz!@
 		 * 
 		 * */
