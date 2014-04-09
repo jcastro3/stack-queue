@@ -26,7 +26,7 @@ public class Queue {
 		size++;
 	}
 	
-	public void enQueue(Array d)
+	public void enQueue(Array d) // This is wrong
 	{
 		Nodes tmp = last; 
 		last = new Nodes(d, null); 
@@ -103,7 +103,7 @@ public class Queue {
 			head = head.next;
 			size--;
 		}
-		System.out.println();
+		System.out.println(); // ??
 		return dump;
 	}
 }
