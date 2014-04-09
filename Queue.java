@@ -28,6 +28,7 @@ public class Queue {
 	
 	public void enQueue(Array d)
 	{
+		// DRY - Don't Repeat Yourself
 		Nodes tmp = last; 
 		last = new Nodes(d, null); 
 		if (isEmpty()) head = last; 
@@ -84,14 +85,15 @@ public class Queue {
 	
 	}
 	
-	public boolean isEmpty()
+	public boolean isEmpty() // good!
 	{
-		return (head == null);
+		return head == null;
 	}
 	
 
 	
 	public String dump(String sptor){
+		// public String dump(char sptor = '\'') {
 		String dump = "";
 		if(sptor == ""){
 			sptor = ",";
@@ -103,7 +105,7 @@ public class Queue {
 			head = head.next;
 			size--;
 		}
-		System.out.println();
+		System.out.println(); // ??
 		return dump;
 	}
 }
