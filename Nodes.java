@@ -28,4 +28,4 @@ public class Nodes {
 	public Nodes getNext(){return next;}
 	public int getData(){ return data;}
 	
-}
+	}

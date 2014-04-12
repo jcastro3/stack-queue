@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class stackTest {
+public class stackTest  {
 	Stack s;
 	@Before 
 	public void initialize() {
@@ -47,9 +47,9 @@ public class stackTest {
 		s.push(3);
 		s.push(5015);
 		s.push(654555);
-		assertEquals(654555, s.pop());
-		assertEquals(5015, s.pop());
-		assertEquals(3, s.pop());
+		assertEquals(654555, s.kick());
+		assertEquals(5015, s.kick());
+		assertEquals(3, s.kick());
 		
 	}
 
@@ -90,7 +90,27 @@ public class stackTest {
 		s.push(3);
 		assertFalse( s.isEmpty());
 	}
-
+	
+	
+	@Test
+	public void testJoin() {
+		s.push(1);
+		s.push(0);
+		String sptor = "";
+		
+		
+		assertEquals("1,0", s.join(""));
+		s.push(1);
+		s.push(0);
+		s.push(1);
+		s.push(0);
+		sptor = "&";
+		
+		 
+		assertEquals("1&0&1&0", s.join("&"));
+	}
+	
+	
 	@Test
 	public void testDump() {
 		Stack s = new Stack();

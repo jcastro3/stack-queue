@@ -32,9 +32,8 @@ public class queueTest {
 
 	@Test
 	public void testEnQueueArray() {
-		int q_data[] = {997,21};
-		q.enQueue(q_data[0]);
-		q.enQueue(q_data[1]);
+		char q_data[] = {997,21,45,5565,5,1,0,0,54,};
+		q.passArray(q_data);
 		assertEquals(997, q.head.getData());
 		assertEquals(21, q.head.next.getData());
 	}
@@ -43,14 +42,15 @@ public class queueTest {
 	public void testDeQue() {
 		q.enQueue(60);
 		q.enQueue(70);
-		assertEquals(60, q.deQue());
-		assertEquals(70, q.deQue());
+		assertEquals(60, q.kick());
+		assertEquals(70, q.kick());
 		assertNull(q.head);
 		
 	}
 
 	@Test
 	public void testRemoveItem() {
+		q.enQueue(0);
 		q.enQueue(8);
 		q.enQueue(10);
 		q.enQueue(11);
@@ -79,24 +79,40 @@ public class queueTest {
 	}
 
 	@Test
-	public void testDump() {
+	public void testJoin() {
 		q.enQueue(1);
 		q.enQueue(0);
 		String sptor = "";
 		
-		String dump = q.dump(sptor);
-		assertEquals("1,0", dump);
 		
+		assertEquals("1,0", q.join(""));
 		q.enQueue(1);
 		q.enQueue(0);
 		q.enQueue(1);
 		q.enQueue(0);
 		sptor = "&";
 		
-		 dump = q.dump(sptor);
-		assertEquals("1&0&1&0", dump);
+		 
+		assertEquals("1&0&1&0", q.join("&"));
 	}
 	
+	@Test
+	public void testDump() {
+		q.enQueue(1);
+		q.enQueue(0);
+		String sptor = "";
+		
+		
+		assertEquals("1,0", q.dump(""));
+		q.enQueue(1);
+		q.enQueue(0);
+		q.enQueue(1);
+		q.enQueue(0);
+		sptor = "&";
+		
+		 
+		assertEquals("1&0&1&0", q.dump("&"));
+	}
 	@Test
 	public void testUnique()
 	{
