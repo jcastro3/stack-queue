@@ -100,41 +100,45 @@ public class Sec_Access {
 	
 	
 	 //unique() returns all unique values, this means, the values which are not duplicated
-	public void unique() // i need to fix this!!
+	public String unique() 
 	{
-				Nodes current = head;
-				Nodes tmp;
-				Nodes prev;
-	
-				if(isEmpty())throw new RuntimeException("No items in the list");	
 				
-				if(!isEmpty()){
-				prev = head;
-				while(current.next != null )
-				{
-					if(head.getData() == current.next.getData() )
+				if(isEmpty())throw new RuntimeException("No items in the list");	
+				Nodes current = head;
+				String print ="";
+				while(current != null)
+				{  
+					Nodes runner = current;
+					while(runner.next != null)
 					{
-						tmp = current.next.next;
-						current = tmp;
-						current.setNext(current);
-	
+						if(runner.next.getData() == current.getData())
+							runner.next = runner.next.next;	
+						else 
+							runner = runner.next;
 					}
-					
-				  }
-				}	
+					current = current.next;
+				}
+				//print out values
+				while(!isEmpty()){
+					print = (print + head.getData()+ " ");
+					head = head.next;
+				}
+				return print;
 		      }
 	
 	 //stack & queue (int elements) should remove number of elements given
+	
 	public void removeItem(int d)
-	{ 
+	
+	{       
+		Nodes current = head;
+			Nodes prev = null; 
+			
 			if (head.getData() == d)
 			{	
 			 head = head.next;	
 			 return;
 			}
-			
-			Nodes current = head;
-			Nodes prev = null; 
 			
 			while(current != null && current.getData() != d)
 			{
@@ -144,7 +148,7 @@ public class Sec_Access {
 	
 			prev.next = current.next;	
 			size--;
-		}
+	}
 	
 	
 

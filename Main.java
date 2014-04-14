@@ -35,27 +35,23 @@ public class Main {
 		Stack mystackA = new Stack(); //array
 		Queue myqueue = new Queue();
 		Queue myqueueA = new Queue();//array
-		
-		myqueue.enQueue(0);
-		myqueue.enQueue(5);
-		while (!myqueue.isEmpty()) {
-			
-			System.out.println(myqueue.kick());
-		}
-		
+	
 		
 		mystack.push(1);
 		mystack.push(5);
-		mystack.push(5);
+		mystack.push(6);
 		mystack.push(5);
 		mystack.push(6);
 		mystack.push(5);
+		mystack.push(6);
+		mystack.push(5);
+		mystack.push(2);
+		mystack.push(4);
+		mystack.push(6);
+		mystack.push(7);
 
 		mystack.unique();
-	while (!myqueue.isEmpty()) {
-			
-			System.out.println(myqueue.kick());
-		}
+	
 		
 	}
 

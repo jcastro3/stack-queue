@@ -50,13 +50,18 @@ public class queueTest {
 
 	@Test
 	public void testRemoveItem() {
-		q.enQueue(0);
+		q.enQueue(20);
 		q.enQueue(8);
 		q.enQueue(10);
-		q.enQueue(11);
-		q.removeItem(11);
 		q.removeItem(8);
+		q.removeItem(20);
 		assertEquals(10, q.head.getData());
+		q.enQueue(100);
+		q.removeItem(10);
+		assertEquals(100, q.head.getData());
+		
+
+
 		
 	}
 
@@ -98,25 +103,20 @@ public class queueTest {
 	
 	@Test
 	public void testDump() {
-		q.enQueue(1);
-		q.enQueue(0);
-		String sptor = "";
 		
-		
-		assertEquals("1,0", q.dump(""));
-		q.enQueue(1);
-		q.enQueue(0);
-		q.enQueue(1);
-		q.enQueue(0);
-		sptor = "&";
-		
-		 
-		assertEquals("1&0&1&0", q.dump("&"));
 	}
 	@Test
 	public void testUnique()
-	{
+	{	
+		q.enQueue(15);
+		q.enQueue(15);
+		q.enQueue(4);
+		q.enQueue(25);
+		q.enQueue(5);
+		q.enQueue(4);
+		q.enQueue(4);
 		
+		assertEquals("15 4 25 5 ", q.unique());
 	}
 
 }

@@ -2,6 +2,8 @@ package stack1;
 
 import static org.junit.Assert.*;
 
+import javax.lang.model.type.DeclaredType;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -99,7 +101,7 @@ public class stackTest  {
 		String sptor = "";
 		
 		
-		assertEquals("1,0", s.join(""));
+		assertEquals("0,1", s.join(""));
 		s.push(1);
 		s.push(0);
 		s.push(1);
@@ -107,28 +109,30 @@ public class stackTest  {
 		sptor = "&";
 		
 		 
-		assertEquals("1&0&1&0", s.join("&"));
+		assertEquals("0&1&0&1", s.join("&"));
 	}
 	
 	
 	@Test
 	public void testDump() {
-		Stack s = new Stack();
-		s.push(1);
-		s.push(0);
-		String sptor = "%";
 		
-		String dump = s.dump(sptor);
-		assertEquals("0%1%", dump);
-		
-
 		
 	}
 	
 	@Test
 	public void testUnique()
 	{
-		
+		s.push(1);
+		s.push(1);
+		s.push(8);
+		s.push(6);
+		s.push(6);
+		s.push(10);
+		s.push(8);
+		assertEquals("8 10 6 1 ", s.unique());
+		s.push(11);
+		s.push(6);
+		assertEquals("6 11 ", s.unique());
 	}
 
 
